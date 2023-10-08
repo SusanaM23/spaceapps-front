@@ -7,30 +7,50 @@
         "
       ></div>
       <br>
-      <div class="flex flex-col content-center text-center">
-        <h1 class="text-white text-4xl hover:text-4xl m-4 font-medium">MakerBridge</h1>
+      <div class="flex flex-col content-end text-center">
+        <h1 class="text-white text-4xl hover:text-4xl m-4 font-medium">{{project.title}}</h1>
       </div>
     </header>
     <div class="m-4">
       <div class="card">
         <div class="text-left">
             <article>
-              <h4 class="mb-1 text-lg hover:text-xl font-medium">
-                {{ project.title }}
-              </h4>
               <p class="mt-0 mb-3 text-gray-600">{{ project.description }}</p>
               <p class="mt-0 mb-3 text-gray-700">
-                <b>Author:</b> {{ project.author }}
+                <b>Leader:</b> {{ project.author }}
               </p>
               <p-tag
                 [value]="project.status"
                 [severity]="getSeverity(project.status)"
               ></p-tag>
+              <div>
+                <p-carousel
+        [value]="project.members"
+        [numVisible]="4"
+        [numScroll]="4"
+        [circular]="false"
+      >
+        <ng-template let-member pTemplate="item">
+          <div
+            class="border-1 surface-border border-round m-2  py-5 px-3"
+          >
+
+            <div class="text-left">
+              <article>
+                <h4 class="mb-1 text-lg hover:text-xl font-medium">
+                  {{ member }}
+                </h4>
+              </article>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+              </div>
               <div class="car-buttons mt-5 flex justify-center">
                 <p-button
                   type="button"
                   styleClass=" bg-cyan-900 p-button-lg mr-2 p-2 text-white"
-                  >See more</p-button
+                  >Donations</p-button
                 >
               </div>
             </article>

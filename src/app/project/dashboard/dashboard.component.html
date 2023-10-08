@@ -39,7 +39,7 @@
                 </h4>
                 <p class="mt-0 mb-3 text-gray-600">{{ project.description }}</p>
                 <p class="mt-0 mb-3 text-gray-700">
-                  <b>Author:</b> {{ project.author }}
+                  <b>Leader:</b> {{ project.author }}
                 </p>
                 <p-tag
                   [value]="project.status"
@@ -49,6 +49,7 @@
                   <p-button
                     type="button"
                     styleClass=" bg-cyan-900 p-button-lg mr-2 p-2 text-white"
+                    (onClick)="onSubmit()"
                     >See more</p-button
                   >
                 </div>

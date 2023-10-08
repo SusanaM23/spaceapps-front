@@ -1,0 +1,122 @@
+.header {
+    position: relative;
+    height: 300px; /* Altura del encabezado (ajusta según sea necesario) */
+    overflow: hidden;
+  }
+  
+  .header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-image: url('/src/assets/img/STScI-01GA6KNV1S3TP2JBPCDT8G826T.png'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    z-index: -1;
+    transition: transform 0.3s ease; /* Transición para el efecto de paralaje */
+  }
+  
+  .header-logo {
+    display: block;
+    margin: 0 auto; /* Centrar el logo horizontalmente */
+  }
+  
+
+// Estilo para el contenedor del slider
+.slider-container {
+    width: 100%; // Ancho completo del contenedor
+    overflow-x: auto; // Habilitar el desplazamiento horizontal
+    white-space: nowrap; // Evitar el salto de línea de los elementos internos
+    display: flex; // Mostrar los elementos internos en una fila
+    gap: 16px; // Espaciado horizontal entre los cards (ajusta según sea necesario)
+  
+    // Estilo de barra de desplazamiento horizontal (opcional)
+    ::-webkit-scrollbar {
+      height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+  }
+  
+  // Estilo para los cards del slider
+  .slider-card {
+    flex: 0 0 auto; // Evitar que los cards se redimensionen
+    width: 300px; // Ancho fijo de cada card
+    background-color: #fff; // Color de fondo de los cards
+    border: 1px solid #ccc; // Borde de los cards
+    border-radius: 5px; // Borde redondeado
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); // Sombra de los cards
+    overflow: hidden; // Evitar que el contenido desborde
+    display: flex; // Mostrar los elementos internos en una columna
+    flex-direction: column; // Alinear elementos internos verticalmente
+    transition: transform 0.3s ease; // Efecto de desplazamiento suave al hacer hover
+  
+    // Espaciado interno en los cards
+    padding: 16px;
+  
+    // Margen derecho para separar los cards (ajusta según sea necesario)
+    margin-right: 16px;
+  
+    // Estilo de imagen en el card
+    .card-image {
+      max-width: 100%; // Ancho máximo de la imagen
+      border-radius: 5px 5px 0 0; // Borde redondeado solo en la parte superior
+    }
+  
+    // Estilo para el contenido del card
+    .card-content {
+      flex-grow: 1; // El contenido del card crece para ocupar el espacio restante
+      display: flex; // Mostrar elementos internos en una columna
+      flex-direction: column; // Alinear elementos internos verticalmente
+  
+      // Estilo del título
+      h2 {
+        font-size: 1.5rem; // Tamaño del título
+        margin-top: 12px; // Espaciado superior
+        font-weight: bold; // Texto en negrita
+      }
+  
+      // Estilo de la descripción
+      p {
+        font-size: 1rem; // Tamaño del texto de descripción
+        margin-top: 8px; // Espaciado superior
+        color: #333; // Color del texto
+      }
+  
+      // Estilo del autor o líder
+      .author {
+        font-size: 0.9rem; // Tamaño del texto del autor
+        margin-top: 8px; // Espaciado superior
+        color: #777; // Color del texto del autor
+      }
+  
+      // Estilo del botón "Ver más"
+      button {
+        background-color: #007bff; // Color de fondo del botón
+        color: #fff; // Color del texto del botón
+        border: none; // Sin borde
+        border-radius: 5px; // Borde redondeado
+        padding: 8px 16px; // Espaciado interno
+        cursor: pointer; // Cambio de cursor al pasar el mouse
+        font-size: 1rem; // Tamaño del texto del botón
+        margin-top: auto; // Empujar el botón hacia abajo
+        align-self: flex-end; // Alinear el botón a la derecha
+      }
+  
+      // Estilo del botón "Ver más" al hacer hover
+      button:hover {
+        background-color: #0056b3; // Color de fondo del botón al pasar el mouse
+      }
+    }
+  
+    // Estilo del card al hacer hover
+    &:hover {
+      transform: scale(1.05); // Efecto de escala al hacer hover
+    }
+  }
+  

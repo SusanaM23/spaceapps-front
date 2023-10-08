@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -54,7 +55,7 @@ export class DashboardComponent {
 
   responsiveOptions: any[] | undefined;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.responsiveOptions = [
@@ -89,5 +90,8 @@ export class DashboardComponent {
     }
   }
 
+  onSubmit(): void{
+    this.router.navigate(['/projects/details'])
+  }
 
 }
