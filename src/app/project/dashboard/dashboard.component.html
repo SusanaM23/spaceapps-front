@@ -1,0 +1,62 @@
+<div class="flex flex-col">
+  <header class="header">
+    <div
+      class="header-background"
+      style="
+        background-image: url('assets/img/STScI-01GA6KNV1S3TP2JBPCDT8G826T.png');
+      "
+    ></div>
+    <br>
+    <div class="flex flex-col content-center text-center">
+      <img class="header-logo h-52 m-3" src="assets/img/logo-2.png" alt="Logo" />
+      <h1 class="text-white text-4xl hover:text-4xl m-4 font-medium">MakerBridge</h1>
+    </div>
+  </header>
+  <div class="m-4">
+    <div class="card">
+      <p-carousel
+        [value]="projects"
+        [numVisible]="3"
+        [numScroll]="3"
+        [circular]="false"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-project pTemplate="item">
+          <div
+            class="border-1 surface-border border-round m-2  py-5 px-3"
+          >
+            <div class="mb-3">
+              <img
+                src="{{ project.imageUrl }}"
+                [alt]="project.title"
+                class="w-full rounded-t-lg shadow-2"
+              />
+            </div>
+            <div class="text-left">
+              <article>
+                <h4 class="mb-1 text-lg hover:text-xl font-medium">
+                  {{ project.title }}
+                </h4>
+                <p class="mt-0 mb-3 text-gray-600">{{ project.description }}</p>
+                <p class="mt-0 mb-3 text-gray-700">
+                  <b>Author:</b> {{ project.author }}
+                </p>
+                <p-tag
+                  [value]="project.status"
+                  [severity]="getSeverity(project.status)"
+                ></p-tag>
+                <div class="car-buttons mt-5 flex justify-center">
+                  <p-button
+                    type="button"
+                    styleClass=" bg-cyan-900 p-button-lg mr-2 p-2 text-white"
+                    >See more</p-button
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>

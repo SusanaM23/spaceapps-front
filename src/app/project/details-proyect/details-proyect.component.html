@@ -1,0 +1,41 @@
+<div class="flex flex-col">
+    <header class="header">
+      <div
+        class="header-background"
+        style="
+          background-image: url('assets/img/STScI-01GA6KNV1S3TP2JBPCDT8G826T.png');
+        "
+      ></div>
+      <br>
+      <div class="flex flex-col content-center text-center">
+        <h1 class="text-white text-4xl hover:text-4xl m-4 font-medium">MakerBridge</h1>
+      </div>
+    </header>
+    <div class="m-4">
+      <div class="card">
+        <div class="text-left">
+            <article>
+              <h4 class="mb-1 text-lg hover:text-xl font-medium">
+                {{ project.title }}
+              </h4>
+              <p class="mt-0 mb-3 text-gray-600">{{ project.description }}</p>
+              <p class="mt-0 mb-3 text-gray-700">
+                <b>Author:</b> {{ project.author }}
+              </p>
+              <p-tag
+                [value]="project.status"
+                [severity]="getSeverity(project.status)"
+              ></p-tag>
+              <div class="car-buttons mt-5 flex justify-center">
+                <p-button
+                  type="button"
+                  styleClass=" bg-cyan-900 p-button-lg mr-2 p-2 text-white"
+                  >See more</p-button
+                >
+              </div>
+            </article>
+          </div>
+      </div>
+    </div>
+  </div>
+  
